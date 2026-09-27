@@ -303,7 +303,7 @@ let allRepos = [];
 let starredRepos = [];
 async function fetchGitHubData() {
     try {
-        const username = 'tickernelz';
+        const username = 'mahnoor986';
         const [reposResponse, starredResponse] = await Promise.all([
             fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`),
             fetch(`https://api.github.com/users/${username}/starred?per_page=100`)
