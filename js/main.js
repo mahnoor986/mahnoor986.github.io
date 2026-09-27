@@ -266,8 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 from_email: email,
                 subject: subject,
                 message: message,
-                to_name: 'Zhafron Adani Kautsar',
-                to_email: 'zhafronadani@gmail.com',
+                to_name: 'Mahnoor Siddiqui',
+                to_email: 'mahnoorsiddiqui986@gmail.com',
                 reply_to: email,
                 year: new Date().getFullYear()
             };
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('FAILED...', error);
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
-                    alert('Oops! Something went wrong. Please try again later or contact me directly at zhafronadani@gmail.com');
+                    alert('Oops! Something went wrong. Please try again later or contact me directly at mahnoorsiddiqui986@gmail.com');
                 });
             function showSuccessMessage(name, form) {
                 const formContainer = form.parentElement;
@@ -409,28 +409,10 @@ function displayRepos(repos, filter = 'all') {
     });
 }
 function determineCategory(repo) {
-    let category = 'other';
-    if (repo.language) {
-        if (repo.language.toLowerCase() === 'python') {
-            category = 'python';
-        } else if (['javascript', 'html', 'css', 'php', 'typescript'].includes(repo.language.toLowerCase())) {
-            category = 'web';
-        }
-    }
-    if (repo.name.toLowerCase().includes('odoo') || 
-        (repo.description && repo.description.toLowerCase().includes('odoo'))) {
-        category = 'odoo';
-    }
-    return category;
+    return 'other';
 }
 function getCategoryIcon(category) {
-    const icons = {
-        python: 'fab fa-python',
-        web: 'fas fa-globe',
-        odoo: 'fas fa-cubes',
-        other: 'fas fa-code'
-    };
-    return icons[category] || icons.other;
+    return 'fas fa-code';
 }
 function openProjectModal(repo) {
     const modal = document.getElementById('project-modal');
